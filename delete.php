@@ -1,5 +1,7 @@
 <?php
                     include 'connect.php';
+
+                    // check if user click on delete button
                     if(isset($_GET['deleteid'])) {
                         
                         // ID of the row to be deleted get from param deleteid of url
@@ -16,7 +18,7 @@
                         // Check if deletion was successful
                         if($result) {
                             echo "Data deleted successfully";
-                            header('Location: display.php');
+                            header('Location: display.php'); //redirect to display page
                         } else {
                             die("Data deletion failed: " . mysqli_error($conn));
                         }

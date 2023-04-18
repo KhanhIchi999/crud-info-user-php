@@ -8,6 +8,7 @@
     $mobile = '';
     $id = '';
     
+    // check if editid variable exists on url
     if(isset($_GET['editid'])) {
         
         // ID of the row to be deleted get from param deleteid of url
@@ -34,7 +35,7 @@
             $password = $row['password'];
             $mobile = $row['mobile'];
 
-            echo "Name: " . $row['name'] . "<br>";
+            // echo "Name: " . $row['name'] . "<br>";
 
         } else {
             echo "No data found for ID: " . $id;
@@ -46,6 +47,7 @@
 
     }
     
+    // check if user click on submit button
     if(isset($_POST["submit"])) {
 
         
@@ -67,7 +69,7 @@
         // Check if row was updated
         if($result) {
             echo "Row updated successfully";
-            header('Location: display.php');
+            header('Location: display.php'); //redirect to display page
         } else {
             echo "Row update failed: " . mysqli_error($conn);
         }

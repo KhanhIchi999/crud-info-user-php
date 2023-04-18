@@ -2,9 +2,11 @@
 
     include 'connect.php';
 
+
+    // check if user click on submit button
     if(isset($_POST["submit"])){
 
-        
+        // get value of form by method post
         $name = $_POST['name'];
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -34,6 +36,7 @@
         mysqli_stmt_close($stmt);
         
     }
+    
     // close connect
     mysqli_close($conn);
     

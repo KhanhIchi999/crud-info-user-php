@@ -24,13 +24,16 @@
             </thead>
             <tbody>
                  <?php
+
                     include 'connect.php';
+
                      // Query to fetch data from the table
                     $sql = "SELECT * FROM crud";
                     $result = mysqli_query($conn, $sql);
 
                     // Check if data is available
                     if (mysqli_num_rows($result) > 0) {
+                        
                         // Loop through each row
                         while($row = mysqli_fetch_assoc($result)) {
 
