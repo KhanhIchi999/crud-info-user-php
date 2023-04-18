@@ -1,31 +1,23 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-    <title>Display Users</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<div class="container my-5">
 
-</head>
+    <a href="addUser.php" role="button" class="btn btn-primary">Add a user</a>
+    <h2 class="text-center">List users</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">User name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Password</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
 
-<body>
-    <div class="container my-5">
-        <a href="user.php" role="button" class="btn btn-primary">Add a user</a>
-        <h2 class="text-center">List users</h2>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">User name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Password</th>
-                    <th scope="col">Phone</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                 <?php
-
-                    include 'connect.php';
+                    include '../connectDB.php';
 
                      // Query to fetch data from the table
                     $sql = "SELECT * FROM crud";
@@ -51,8 +43,8 @@
                                 <td> ' . $password . '</td>
                                 <td> ' . $mobile . '</td>
                                 <td>
-                                    <a href="delete.php?deleteid='.$id.'" role="button" class="btn btn-danger">Delete</a>
-                                    <a href="edit.php?editid='.$id.'" role="button" class="btn btn-success">Edit</a>
+                                    <a href="deleteUser.php?deleteid='.$id.'" role="button" class="btn btn-danger">Delete</a>
+                                    <a href="editUser.php?editid='.$id.'" role="button" class="btn btn-success">Edit</a>
                                 </td>
                             </tr>';
                         }
@@ -63,9 +55,6 @@
                     // Close database connection
                     mysqli_close($conn);
                 ?>
-            </tbody>
-        </table>
-    </div>
-</body>
-
-</html>
+        </tbody>
+    </table>
+</div>

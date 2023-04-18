@@ -1,6 +1,6 @@
 <?php
 
-    include 'connect.php';
+    include '../connectDB.php';
 
 
     // check if user click on submit button
@@ -12,6 +12,7 @@
         $password = $_POST['password'];
         $mobile = $_POST['mobile'];
 
+        // echo "hello ooo";
 
         // Prepare the statement
         $sql = "INSERT INTO crud (name, email, password, mobile)
@@ -27,7 +28,7 @@
         // Check for successful insertion
         if($result) {
             echo "Data inserted successfully";
-            header('Location: display.php');
+            header('Location: index.php?page=user');
         } else {
             die("Data insertion failed: " . mysqli_error($conn));
         }
@@ -69,7 +70,7 @@
                 <div class="card">
                     <div class="card-header">Add a user</div>
                     <div class="card-body">
-                        <form action="user.php" method="post">
+                        <form action="addUser.php" method="post">
                             <div class="form-group">
                                 <label for="username">User name</label>
                                 <input type="text" class="form-control" id="username" name="name" placeholder="Enter username">

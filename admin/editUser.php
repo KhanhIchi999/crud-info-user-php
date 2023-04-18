@@ -1,6 +1,6 @@
 <?php
 
-    include 'connect.php';
+    include '../connectDB.php';
 
     $name = '';
     $email = '';
@@ -69,7 +69,7 @@
         // Check if row was updated
         if($result) {
             echo "Row updated successfully";
-            header('Location: display.php'); //redirect to display page
+            header('Location: index.php?page=user'); //redirect to user page
         } else {
             echo "Row update failed: " . mysqli_error($conn);
         }
@@ -115,7 +115,7 @@
                 <div class="card">
                     <div class="card-header">Edit user</div>
                     <div class="card-body">
-                        <form action="edit.php" method="post">
+                        <form action="editUser.php" method="post">
                             <div class="form-group d-none">
                                 <label for="id">id</label>
                                 <input   type="text" class="form-control" id="id" name="id" value=<?php echo $id ?>>

@@ -1,5 +1,5 @@
 <?php
-                    include 'connect.php';
+                    include '../connectDB.php';
 
                     // check if user click on delete button
                     if(isset($_GET['deleteid'])) {
@@ -18,7 +18,7 @@
                         // Check if deletion was successful
                         if($result) {
                             echo "Data deleted successfully";
-                            header('Location: display.php'); //redirect to display page
+                            header('Location: index.php?page=user'); //redirect to user page
                         } else {
                             die("Data deletion failed: " . mysqli_error($conn));
                         }
