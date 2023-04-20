@@ -15,7 +15,7 @@
         // echo "hello ooo";
 
         // Prepare the statement
-        $sql = "INSERT INTO crud (name, email, password, mobile)
+        $sql = "INSERT INTO users (name, email, password, mobile)
                 VALUES (?, ?, ?, ?)";
         $stmt = mysqli_prepare($conn, $sql);
 

@@ -15,7 +15,7 @@
         $id = $_GET['editid'];
 
          // Query to fetch row by ID
-        $sql = "SELECT * FROM crud WHERE id = ?";
+        $sql = "SELECT * FROM users WHERE id = ?";
         $stmt = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($stmt, "i", $id);
 
@@ -59,7 +59,7 @@
         $id = $_POST['id'];
 
          // Query to update row by ID
-        $sql = "UPDATE crud SET name=?, email=?, password=?, mobile=? WHERE id=?";
+        $sql = "UPDATE users SET name=?, email=?, password=?, mobile=? WHERE id=?";
         $stmt = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($stmt, "ssssi", $newName, $newEmail, $newPassword, $newMobile, $id);
 

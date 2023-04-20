@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Bootstrap Sidebar Example with Active Effect</title>
+    <title>Admin</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         .sidebar {
@@ -58,26 +58,29 @@
                 <h1>Content Area</h1>
                  <!-- Main Content -->
                 <div class="col-md-9">
-                    <h1>Main Content</h1>
+                    <h1 class="text-center">Quản Lý User</h1>
                     <?php
-                        // // Example variable
-                        $page = $_GET['page'];
-                        
-                        // Switch case statement
-                        switch ($page) {
-                            case 'user':
-                                include_once "user.php";
-                                break;
-                            case 'banana':
-                                echo 'This is a banana.';
-                                break;
-                            case 'orange':
-                                echo 'This is an orange.';
-                                break;
-                            default:
-                                echo 'This is an unknown fruit.';
-                                break;
-                        }
+                       if(isset($_GET['page'])) {
+                           $page = $_GET['page'];
+                           
+                           // Switch case statement
+                           switch ($page) {
+                               case 'user':
+                                   include_once "user.php";
+                                   break;
+                               case 'banana':
+                                   echo 'This is a banana.';
+                                   break;
+                               case 'orange':
+                                   echo 'This is an orange.';
+                                   break;
+                               default:
+                                   include_once "user.php";
+                                   break;
+                           }
+                       }else {
+                            include_once "user.php";
+                       }
                     ?>
                 </div>
             </div>

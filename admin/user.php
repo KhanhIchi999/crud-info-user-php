@@ -20,7 +20,7 @@
                     include '../connectDB.php';
 
                      // Query to fetch data from the table
-                    $sql = "SELECT * FROM crud";
+                    $sql = "SELECT * FROM users";
                     $result = mysqli_query($conn, $sql);
 
                     // Check if data is available

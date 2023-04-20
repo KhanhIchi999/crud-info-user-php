@@ -8,7 +8,7 @@
                         $id = $_GET['deleteid'];
     
                          // Query to delete data from the table by ID
-                        $sql = "DELETE FROM crud WHERE id = ?";
+                        $sql = "DELETE FROM users WHERE id = ?";
                         $stmt = mysqli_prepare($conn, $sql);
                         mysqli_stmt_bind_param($stmt, "i", $id);
     
